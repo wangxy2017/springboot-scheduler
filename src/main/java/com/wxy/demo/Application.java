@@ -24,7 +24,7 @@ public class Application {
         log.info("task1:{}", LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss")));
     }
 
-    @Scheduled(cron = "00 00 23 ? * *")
+    @Scheduled(cron = "0 30 10 ? * *")
     public void task2() {
         log.info("task2:{}", LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss")));
     }
