@@ -15,12 +15,18 @@ import java.util.Date;
 @Slf4j
 public class Application {
 
+    private int count = 0;
+
     public static void main(String[] args) {
         SpringApplication.run(Application.class, args);
     }
 
     @Scheduled(fixedRate = 5000)
     public void task1() {
+        count++;
+        if (count == 3) {
+            throw new RuntimeException();
+        }
         log.info("task1:{}", LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss")));
     }
 
